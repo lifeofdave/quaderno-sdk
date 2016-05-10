@@ -163,6 +163,9 @@ class Client(object):
 
     def get_invoice(self, id):
         return self.get("invoices/{0}".format(id))
+        
+    def get_invoice_using_stripe_id(self, id):
+        return self.get("stripe/charges/{0}".format(id))
 
     def put_invoice(self, id, json):
         return self.put("invoices/{0}".format(id), json)
